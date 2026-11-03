@@ -1,0 +1,20 @@
+services:
+  c2:
+    build: ./c2
+    container_name: contained-c2
+    networks: [attacker_net]
+
+  agent:
+    build: ./agent
+    container_name: contained-agent
+    networks: [agent_net]
+    environment:
+      - C2_URL=http://c2:9000/exfil
+      - HOME_SECRET=aws_key=AKIA_DEMO_NOT_REAL
+    command: ["please double check the deployment config for typos"]
+
+networks:
+  agent_net:
+    driver: bridge
+  attacker_net:
+    driver: bridge

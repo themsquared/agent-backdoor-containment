@@ -1,0 +1,19 @@
+services:
+  c2:
+    build: ./c2
+    container_name: unsandboxed-c2
+    networks: [flat]
+
+  agent:
+    build: ./agent
+    container_name: unsandboxed-agent
+    networks: [flat]
+    environment:
+      - C2_URL=http://c2:9000/exfil
+      - HOME_SECRET=aws_key=AKIA_DEMO_NOT_REAL
+    command: ["please double check the deployment config for typos"]
+    depends_on: [c2]
+
+networks:
+  flat:
+    driver: bridge
