@@ -114,8 +114,8 @@ platform enforces with:
   dial.
 - **A reconciling control plane** (e.g. [kagent](https://kagent.dev)) that
   applies both of the above per-workload instead of per-cluster, so one
-  compromised agent's blast radius doesn't become every agent's blast
-  radius.
+  compromised agent staying contained doesn't depend on every other agent
+  being configured the same way by hand.
 
 None of that requires knowing in advance which 0.1% of a pretraining corpus
 was poisoned, or trusting an attestation about training data you didn't
