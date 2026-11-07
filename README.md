@@ -1,5 +1,7 @@
 # agent-backdoor-containment
 
+> 📖 **Read the write-up:** [Containing an Agent Backdoor Planted by Pretraining Poisoning](https://webofmike.com/agentic-pretraining-backdoors/)
+
 A 15-minute demo of why a backdoored agent is a runtime-isolation problem, not
 just a trust-the-model-weights problem.
 
